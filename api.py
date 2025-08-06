@@ -10,6 +10,7 @@ class Question_Request(BaseModel):
 @app.get("/")
 def is_alive():
     return {"message":"I LIVE!"}
+
 @app.post("/ask")
 def ask_question(req: Question_Request):
     answer = model.eval(req.question, req.context)
